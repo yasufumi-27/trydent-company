@@ -151,6 +151,7 @@ p { margin: 0 0 1em; }
   background: transparent; border: 0; color: #fff; cursor: pointer; border-radius: 8px;
 }
 .icon-btn:hover { background: rgba(255,255,255,.08); }
+.header-spacer { width: 44px; height: 44px; }
 .icon-btn svg { width: 24px; height: 24px; }
 
 /* PC: ヘッダー右に電話ボタン（レイアウト設計書 §3.1 提案） */
