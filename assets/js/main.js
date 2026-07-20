@@ -65,6 +65,35 @@
     reveals.forEach(function (el) { el.classList.add('is-in'); });
   }
 
+  /* ---------- Instagram ランダム表示（施工・入庫の様子） ----------
+     assets/data/instagram-posts.js の window.IG_POSTS からランダムに 6 件選び、
+     各画像をクリックすると該当投稿の permalink へ遷移する。
+     データが無い場合は HTML に書かれた静的グリッドをそのまま残す */
+  var igGrid = document.querySelector('.ig-grid');
+  var igPosts = window.IG_POSTS;
+  if (igGrid && Array.isArray(igPosts) && igPosts.length) {
+    var IG_COUNT = 6;
+    // Fisher–Yates でシャッフルして先頭 6 件を採用
+    var pool = igPosts.slice();
+    for (var i = pool.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+    }
+    igGrid.textContent = '';
+    pool.slice(0, IG_COUNT).forEach(function (post) {
+      var a = document.createElement('a');
+      a.href = post.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      var img = document.createElement('img');
+      img.src = post.image;
+      img.alt = post.alt || 'Instagram投稿';
+      img.loading = 'lazy';
+      a.appendChild(img);
+      igGrid.appendChild(a);
+    });
+  }
+
   /* ---------- 現在年（フッター） ---------- */
   var y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();

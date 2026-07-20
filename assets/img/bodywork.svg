@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Georgia, 'Times New Roman', serif">
+  <style>
+    .gun{animation:sweep 3s ease-in-out infinite}
+    @keyframes sweep{0%,100%{transform:translateX(-90px)}50%{transform:translateX(90px)}}
+    .mist i{display:none}
+    .mist circle{animation:mist 1s linear infinite;opacity:0}
+    .mist circle:nth-child(2){animation-delay:.25s}
+    .mist circle:nth-child(3){animation-delay:.5s}
+    .mist circle:nth-child(4){animation-delay:.75s}
+    @keyframes mist{0%{opacity:.9;transform:translateY(0) scale(.5)}100%{opacity:0;transform:translateY(46px) scale(1.6)}}
+    .paint{animation:paint 3s ease-in-out infinite;transform-origin:400px 0}
+    @keyframes paint{0%,100%{opacity:.25}50%{opacity:.8}}
+    .shine{animation:shine 3.4s linear infinite}
+    @keyframes shine{0%{transform:translateX(-360px) skewX(-18deg)}100%{transform:translateX(880px) skewX(-18deg)}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+
+  <rect width="800" height="500" fill="#0B0B0D"/>
+  <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+    <stop offset="0" stop-color="#1A141E"/><stop offset="1" stop-color="#0B0B0D"/>
+  </radialGradient>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="18" y="18" width="764" height="464" fill="none" stroke="#C9A227" stroke-opacity=".35" stroke-width="2"/>
+
+  <defs>
+    <linearGradient id="m6Body" x1="0" y1="220" x2="0" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A4C58"/><stop offset=".45" stop-color="#26262E"/><stop offset="1" stop-color="#131318"/>
+    </linearGradient>
+    <linearGradient id="m6Glass" x1="0" y1="221" x2="0" y2="262" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A5E74"/><stop offset=".5" stop-color="#1C2733"/><stop offset="1" stop-color="#0C1319"/>
+    </linearGradient>
+  </defs>
+  <!-- スプレーガン（左右にスイープ） -->
+  <g class="gun">
+    <g transform="translate(400 150)">
+      <rect x="-46" y="-20" width="92" height="34" rx="10" fill="#C9A227"/>
+      <rect x="-14" y="10" width="26" height="44" rx="8" fill="#1E1E24" stroke="#C9A227" stroke-width="3"/>
+      <rect x="-58" y="-12" width="14" height="18" rx="4" fill="#E8D9A0"/>
+      <rect x="-6" y="-42" width="14" height="24" rx="5" fill="#26262E" stroke="#C9A227" stroke-width="2.5"/>
+      <!-- ミスト -->
+      <g class="mist" fill="#E06A2F">
+        <circle cx="-18" cy="34" r="7"/>
+        <circle cx="0" cy="38" r="8"/>
+        <circle cx="18" cy="34" r="7"/>
+        <circle cx="8" cy="30" r="5"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 塗装されるボディシェル（BMW M6 E63：実写トレース、スタンド上） -->
+  <g>
+    <!-- スタンド -->
+    <path d="M340 372 L354 350 L372 350 L386 372 Z" fill="#1E1E24" stroke="#C9A227" stroke-width="2.5"/>
+    <path d="M620 372 L632 350 L648 350 L660 372 Z" fill="#1E1E24" stroke="#C9A227" stroke-width="2.5"/>
+    <path d="M170 346 C164 344 161 340 160 334 L159 310 C159 302 161 296 166 292 C172 288 180 286 190 284 C212 277 234 272 256 269 C288 264 320 261 348 259 L356 258 C382 247 406 236 430 227 C440 223 452 221 464 221 C482 220 500 221 516 224 C532 227 546 232 558 238 C576 246 592 252 606 255 C632 258 658 260 678 261 C686 261 692 261 696 263 C700 266 702 271 702 277 L703 300 C703 314 700 327 695 336 C692 342 688 345 683 346 L640 347 L625 348 A 65 65 0 0 0 495 348 L440 348 C400 349 360 349 320 348 L317 348 A 65 65 0 0 0 187 348 Z" fill="url(#m6Body)" stroke="#C9A227" stroke-width="3"/>
+    <clipPath id="body"><path d="M170 346 C164 344 161 340 160 334 L159 310 C159 302 161 296 166 292 C172 288 180 286 190 284 C212 277 234 272 256 269 C288 264 320 261 348 259 L356 258 C382 247 406 236 430 227 C440 223 452 221 464 221 C482 220 500 221 516 224 C532 227 546 232 558 238 C576 246 592 252 606 255 C632 258 658 260 678 261 C686 261 692 261 696 263 C700 266 702 271 702 277 L703 300 C703 314 700 327 695 336 C692 342 688 345 683 346 L640 347 L625 348 A 65 65 0 0 0 495 348 L440 348 C400 349 360 349 320 348 L317 348 A 65 65 0 0 0 187 348 Z"/></clipPath>
+    <g clip-path="url(#body)">
+      <rect x="140" y="318" width="580" height="34" fill="#000" opacity=".3"/>
+      <circle cx="252" cy="342" r="70" fill="none" stroke="#000" stroke-width="12" opacity=".4"/>
+      <circle cx="560" cy="342" r="70" fill="none" stroke="#000" stroke-width="12" opacity=".4"/>
+      <path d="M190 286 C240 275 300 267 356 262 L356 267 C302 271 244 279 194 290 Z" fill="#FFF" opacity=".14"/>
+      <path d="M612 258 C640 260 668 261 692 264 L690 269 C666 265 638 263 612 262 Z" fill="#FFF" opacity=".10"/>
+      <rect class="paint" x="150" y="210" width="570" height="150" fill="#D2622D"/>
+      <rect class="shine" x="0" y="180" width="90" height="200" fill="#FFFFFF" opacity=".18"/>
+    </g>
+    <!-- キャビングラス（ホフマイスターキンク付きDLO） -->
+    <path d="M366 259 C388 249 410 239 432 229 C442 225 452 223 464 223 C480 222 496 223 510 226 C526 229 540 234 552 240 C570 248 586 253 600 255 L604 257 C570 259 530 260 490 261 C450 262 410 262 388 262 C380 262 372 261 366 259 Z" fill="url(#m6Glass)" stroke="#8A929C" stroke-width="2"/>
+    <line x1="500" y1="224" x2="506" y2="260" stroke="#5A6068" stroke-width="2.5"/>
+    <line x1="584" y1="250" x2="592" y2="257" stroke="#5A6068" stroke-width="2"/>
+    <!-- パネルシーム・キャラクターライン -->
+    <g fill="none" stroke="#4A4A52" stroke-width="2">
+      <path d="M388 266 C386 292 386 320 388 346"/>
+      <path d="M564 283 C562 304 562 326 564 346"/>
+      <path d="M180 292 C300 283 480 279 600 279 C640 279 670 280 692 282"/>
+      <path d="M210 332 C350 327 550 325 676 328"/>
+    </g>
+    <rect x="466" y="288" width="20" height="6" rx="3" fill="#4A4A52"/>
+    <!-- フェンダーギル・ミラー -->
+    <path d="M330 296 L348 294 L348 303 L332 305 Z" fill="#26262E" stroke="#4A4A52" stroke-width="1.2"/>
+    <path d="M362 258 L354 250" stroke="#26262E" stroke-width="3"/>
+    <rect x="340" y="242" width="19" height="11" rx="4" fill="#3A3A44" stroke="#26262E" stroke-width="1.2" transform="rotate(-10 349 247)"/>
+    <!-- ランプ類・グリル・インテーク -->
+    <path d="M172 290 C178 285 188 282 198 283 C206 284 209 288 207 293 C202 299 190 302 180 300 C174 298 171 294 172 290 Z" fill="#E8D9A0" stroke="#B9A75E" stroke-width="1.5"/>
+    <circle cx="186" cy="291" r="4" fill="#FFF7DE" stroke="#8A7A3C" stroke-width="1"/>
+    <path d="M160 302 L172 300 L173 314 L161 316 Z" fill="#141418"/>
+    <path d="M162 322 L202 318 L204 336 L166 340 Z" fill="#141418"/>
+    <path d="M168 326 L198 322 M169 332 L200 328" stroke="#26262E" stroke-width="2" fill="none"/>
+    <path d="M668 266 C680 264 692 264 699 267 L700 290 C692 287 680 286 670 288 Z" fill="#F39800" stroke="#A66A10" stroke-width="1.2"/>
+  </g>
+  <line x1="90" y1="372" x2="710" y2="372" stroke="#2A2A2A" stroke-width="3"/>
+
+  <text x="400" y="446" text-anchor="middle" fill="#E8D9A0" font-size="30" letter-spacing="10">BODY &amp; PAINT</text>
+  <text x="400" y="472" text-anchor="middle" fill="#8A8A8A" font-size="13" letter-spacing="6">TRIDENT COMPANY</text>
+</svg>

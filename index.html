@@ -20,10 +20,13 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
     </button>
     <a href="index.html" class="header-logo" aria-label="TRIDENT COMPANY トップへ">
-      <span class="header-logo__sub">TRIDENT COMPANY</span>
-      <span class="header-logo__main"><span class="t">TRIDENT</span> <span class="c">COMPANY</span></span>
+      <img src="assets/img/logo.png?v=20260721" alt="TRIDENT COMPANY エンブレム" class="header-emblem" width="36" height="36">
+      <span class="header-logo__text">
+        <span class="header-logo__sub">TRIDENT COMPANY</span>
+        <span class="header-logo__main"><span class="t">TRIDENT</span> <span class="c">COMPANY</span></span>
+      </span>
     </a>
-    <a href="tel:09098641307" class="header-tel">☎ 090-9864-1307</a>
+    <a href="tel:09098641307" class="header-tel"><span class="icn icn--tel" aria-hidden="true"></span> 090-9864-1307</a>
     <button class="icon-btn" aria-label="サイト内検索">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg>
     </button>
@@ -42,7 +45,7 @@
   <div class="drawer__overlay" data-drawer-close></div>
   <div class="drawer__panel" role="dialog" aria-label="メニュー">
     <div class="drawer__head">
-      <span class="header-logo__main"><span class="t">TRIDENT</span> <span class="c">COMPANY</span></span>
+      <span class="drawer__brand"><img src="assets/img/logo.png?v=20260721" alt="" class="header-emblem" width="28" height="28"><span class="header-logo__main"><span class="t">TRIDENT</span> <span class="c">COMPANY</span></span></span>
       <button class="icon-btn" data-drawer-close aria-label="メニューを閉じる">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
       </button>
@@ -68,14 +71,25 @@
   <!-- ======================= 通知バー ======================= -->
   <div class="notice-bar" role="status">
     <div class="notice-bar__track">
-      <span>🚨 24時間365日 レッカー対応｜事故・故障はまずお電話を ☎ 090-9864-1307</span>
-      <span>🚨 24時間365日 レッカー対応｜事故・故障はまずお電話を ☎ 090-9864-1307</span>
+      <span><span class="icn icn--siren" aria-hidden="true"></span> 24時間365日 レッカー対応｜事故・故障はまずお電話を <span class="icn icn--tel" aria-hidden="true"></span> 090-9864-1307</span>
+      <span><span class="icn icn--siren" aria-hidden="true"></span> 24時間365日 レッカー対応｜事故・故障はまずお電話を <span class="icn icn--tel" aria-hidden="true"></span> 090-9864-1307</span>
     </div>
   </div>
 
   <!-- ======================= ファーストビュー ======================= -->
   <section class="hero">
-    <div class="hero__bg"><img src="assets/img/hero-top.png" alt="ネオンの光跡を背景にした高級外車"></div>
+    <!-- 3D走行シーン：実写のオーナー車（Cayman GT4）は定位置で、路面・光跡が後方へ流れる -->
+    <div class="hero__bg hero3d" aria-hidden="true">
+      <div class="hero3d__streaks"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><i class="s5"></i><i class="s6"></i></div>
+      <div class="hero3d__road">
+        <div class="hero3d__lane"></div>
+      </div>
+      <div class="hero3d__car">
+        <img class="hero3d__body" src="assets/img/hero-car-toon.png?v=20260721" alt="">
+        <img class="hero3d__wheel hero3d__wheel--f" src="assets/img/hero-wheel-f.png?v=20260721" alt="">
+        <img class="hero3d__wheel hero3d__wheel--r" src="assets/img/hero-wheel-r.png?v=20260721" alt="">
+      </div>
+    </div>
     <div class="hero__inner">
       <h1 class="hero__logo">
         <span class="l1">TRIDENT</span>
@@ -84,8 +98,8 @@
       <!-- キャッチコピーは提案（検討事項 A-2）。要承認 -->
       <p class="hero__copy">大阪・岸和田から、あなたのカーライフをトータルサポート。<br>レッカーから整備・板金・カスタム・販売買取まで。</p>
       <div class="hero__cta">
-        <a href="#contact" class="btn btn--primary btn--lg"><span class="btn__icon">🚨</span> レッカー依頼はこちら</a>
-        <a href="tel:09098641307" class="btn btn--ghost btn--lg"><span class="btn__icon">☎</span> 今すぐ電話する</a>
+        <a href="#contact" class="btn btn--primary btn--lg"><span class="btn__icon"><span class="icn icn--siren" aria-hidden="true"></span></span> レッカー依頼はこちら</a>
+        <a href="tel:09098641307" class="btn btn--ghost btn--lg"><span class="btn__icon"><span class="icn icn--tel" aria-hidden="true"></span></span> 今すぐ電話する</a>
       </div>
     </div>
     <a href="#towing" class="hero__scroll">SCROLL</a>
@@ -102,7 +116,7 @@
       <div class="service-row service-row--feature reveal">
         <div class="service-row__media">
           <span class="service-row__badge">最重要サービス</span>
-          <img src="assets/img/towing.png" alt="高級車をレッカー搬送するTRIDENT COMPANYのレッカー車">
+          <img src="assets/img/towing.svg?v=20260721" alt="高級車をレッカー搬送するTRIDENT COMPANYのレッカー車">
         </div>
         <div class="service-row__body">
           <span class="service-row__en">24H / 365 Days</span>
@@ -110,7 +124,7 @@
           <p class="service-row__text">事故や故障で自走不可となったお車のレッカー搬送を、24時間・365日対応で迅速に現場へお伺いします。保険会社のレッカー特約もご利用可能です。バッテリー上がり・エンジントラブル・長距離搬送まで、経験豊富なスタッフが安全・確実に対応します。</p>
           <p class="service-row__text">お電話の際は「現在地・お車の車種・ナンバー・状況」をお伝えいただくとスムーズです。</p>
           <div class="service-row__actions">
-            <a href="tel:09098641307" class="btn btn--tel"><span class="btn__icon">☎</span> 090-9864-1307</a>
+            <a href="tel:09098641307" class="btn btn--tel"><span class="btn__icon"><span class="icn icn--tel" aria-hidden="true"></span></span> 090-9864-1307</a>
             <a href="towing/index.html" class="btn btn--ghost">レッカーの詳細を見る</a>
           </div>
         </div>
@@ -129,7 +143,7 @@
 
       <!-- 整備・修理 -->
       <div class="service-row reveal">
-        <div class="service-row__media"><img src="assets/img/maintenance.png" alt="輸入車を整備するTRIDENT COMPANYの工場"></div>
+        <div class="service-row__media"><img src="assets/img/maintenance.svg?v=20260721" alt="輸入車を整備するTRIDENT COMPANYの工場"></div>
         <div class="service-row__body">
           <span class="service-row__en">Maintenance & Repair</span>
           <h3 class="service-row__title">整備・修理｜外車もお任せ</h3>
@@ -142,7 +156,7 @@
 
       <!-- 板金・塗装 -->
       <div class="service-row service-row--reverse reveal">
-        <div class="service-row__media"><img src="assets/img/bodywork.png" alt="板金塗装作業中の車両"></div>
+        <div class="service-row__media"><img src="assets/img/bodywork.svg?v=20260721" alt="板金塗装作業中の車両"></div>
         <div class="service-row__body">
           <span class="service-row__en">Bodywork & Paint</span>
           <h3 class="service-row__title">板金・塗装｜保険修理対応</h3>
@@ -155,7 +169,7 @@
 
       <!-- カスタム -->
       <div class="service-row reveal">
-        <div class="service-row__media"><img src="assets/img/custom.png" alt="カスタムされたスポーツカー"></div>
+        <div class="service-row__media"><img src="assets/img/custom.svg?v=20260721" alt="カスタムされたスポーツカー"></div>
         <div class="service-row__body">
           <span class="service-row__en">Custom</span>
           <h3 class="service-row__title">カスタム｜持込パーツも相談可</h3>
@@ -168,7 +182,7 @@
 
       <!-- 販売・買取 -->
       <div class="service-row service-row--reverse reveal">
-        <div class="service-row__media"><img src="assets/img/sales.png" alt="展示された車両"></div>
+        <div class="service-row__media"><img src="assets/img/sales.svg?v=20260721" alt="展示された車両"></div>
         <div class="service-row__body">
           <span class="service-row__en">Sales & Purchase</span>
           <h3 class="service-row__title">販売・買取｜注文販売＆無料査定</h3>
@@ -229,14 +243,16 @@
         <h2 class="sec-head__ja">施工・入庫の様子</h2>
         <div class="sec-head__divider"></div>
       </div>
-      <!-- 本番は Smash Balloon で公式フィードを表示（検討事項 D-3）。ここではダミー配置 -->
+      <!-- 投稿リスト（assets/data/instagram-posts.js）からランダムに 6 件を表示。
+           各画像は該当投稿の permalink へ遷移する（検討事項 D-3）。
+           以下の静的グリッドは JS 無効時のフォールバック -->
       <div class="ig-grid reveal">
-        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/custom-2.png" alt="Instagram投稿"></a>
-        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/sales-2.png" alt="Instagram投稿"></a>
-        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/hero-portrait.png" alt="Instagram投稿"></a>
-        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/maintenance.png" alt="Instagram投稿"></a>
-        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/bodywork.png" alt="Instagram投稿"></a>
-        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/towing.png" alt="Instagram投稿"></a>
+        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/custom-2.svg?v=20260721" alt="Instagram投稿"></a>
+        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/sales-2.svg?v=20260721" alt="Instagram投稿"></a>
+        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/hero-portrait.svg?v=20260721" alt="Instagram投稿"></a>
+        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/maintenance.svg?v=20260721" alt="Instagram投稿"></a>
+        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/bodywork.svg?v=20260721" alt="Instagram投稿"></a>
+        <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener"><img src="assets/img/towing.svg?v=20260721" alt="Instagram投稿"></a>
       </div>
       <div class="ig-note">
         <a href="https://www.instagram.com/car_20555/" target="_blank" rel="noopener" class="btn btn--ghost">@CAR_20555 をフォローする</a>
@@ -314,12 +330,12 @@
       <div class="contact-cta__box reveal">
         <p class="contact-cta__lead">まずはお気軽にご連絡ください</p>
         <p class="contact-cta__sub">事故・故障のレッカーは、下記の電話が最短です。お問い合わせ・LINEもご利用いただけます。</p>
-        <a href="tel:09098641307" class="contact-cta__tel">☎ 090-9864-1307</a>
+        <a href="tel:09098641307" class="contact-cta__tel"><span class="icn icn--tel" aria-hidden="true"></span> 090-9864-1307</a>
         <p class="contact-cta__hours">レッカー受付 24時間365日 ／ 事務所営業時間【要確認】</p>
         <div class="contact-cta__actions">
-          <a href="tel:09098641307" class="btn btn--tel btn--lg"><span class="btn__icon">☎</span> 電話する</a>
-          <a href="contact/index.html" class="btn btn--primary btn--lg"><span class="btn__icon">✉</span> お問い合わせフォーム</a>
-          <a href="#" data-line class="btn btn--line btn--lg"><span class="btn__icon">💬</span> LINEで相談</a>
+          <a href="tel:09098641307" class="btn btn--tel btn--lg"><span class="btn__icon"><span class="icn icn--tel" aria-hidden="true"></span></span> 電話する</a>
+          <a href="contact/index.html" class="btn btn--primary btn--lg"><span class="btn__icon"><span class="icn icn--mail" aria-hidden="true"></span></span> お問い合わせフォーム</a>
+          <a href="#" data-line class="btn btn--line btn--lg"><span class="btn__icon"><span class="icn icn--chat" aria-hidden="true"></span></span> LINEで相談</a>
         </div>
       </div>
     </div>
@@ -332,6 +348,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
+        <img src="assets/img/logo.png?v=20260721" alt="TRIDENT COMPANY エンブレム" class="footer-emblem" width="56" height="56">
         <div class="footer-logo"><span class="t">TRIDENT</span> <span class="c">COMPANY</span></div>
         <div class="footer-info">
           〒596-0814 大阪府岸和田市岡山町509-7<br>
@@ -371,11 +388,12 @@
 
 <!-- ======================= 下部固定CTA（SP） ======================= -->
 <nav class="fixed-cta" aria-label="固定アクション">
-  <a href="tel:09098641307" class="is-tel"><span class="ic">☎</span>電話する</a>
-  <a href="contact/index.html"><span class="ic">✉</span>お問い合わせ</a>
-  <a href="#" data-line class="is-line"><span class="ic">💬</span>LINE</a>
+  <a href="tel:09098641307" class="is-tel"><span class="ic"><span class="icn icn--tel" aria-hidden="true"></span></span>電話する</a>
+  <a href="contact/index.html"><span class="ic"><span class="icn icn--mail" aria-hidden="true"></span></span>お問い合わせ</a>
+  <a href="#" data-line class="is-line"><span class="ic"><span class="icn icn--chat" aria-hidden="true"></span></span>LINE</a>
 </nav>
 
+<script src="assets/data/instagram-posts.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
