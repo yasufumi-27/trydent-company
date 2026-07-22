@@ -190,8 +190,10 @@ p { margin: 0 0 1em; }
   .boxnav__item:last-child { border-right: 0; }
 }
 
-/* body の上部余白（固定ヘッダー＋ボックスナビ分） */
-.has-fixed-header { padding-top: calc(var(--header-h) + 57px); }
+/* body の上部余白（固定ヘッダー＋ボックスナビ分）
+   モバイル幅では boxnav が 2 行（2列×4項目＝各58px＋境界1px＝117px）になるため、
+   その分を確保しないと直下の通知バーが固定ヘッダーに隠れてしまう。 */
+.has-fixed-header { padding-top: calc(var(--header-h) + 117px); }
 @media (min-width: 992px) { .has-fixed-header { padding-top: calc(var(--header-h) + 51px); } }
 
 /* ---------- 通知バー ---------- */
