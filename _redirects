@@ -1,0 +1,9 @@
+# Cloudflare Pages リダイレクト設定
+# 参考: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# www あり → なし（canonical は https://trident-company.jp/ に統一）
+https://www.trident-company.jp/* https://trident-company.jp/:splat 301
+
+# .pages.dev のプレビューURLが検索に載らないよう本番ドメインへ寄せる
+# （Cloudflare Pages の設定でカスタムドメインを設定後に有効：必要に応じてコメント解除）
+# https://trydent-company.pages.dev/* https://trident-company.jp/:splat 301

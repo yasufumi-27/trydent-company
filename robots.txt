@@ -1,0 +1,8 @@
+# TRIDENT COMPANY / https://trident-company.jp/
+User-agent: *
+Allow: /
+
+# プライバシーポリシーは noindex（HTMLメタで制御）。robots.txt では
+# クロール自体は許可する（メタrobotsを読ませるため Disallow にしない）。
+
+Sitemap: https://trident-company.jp/sitemap.xml
