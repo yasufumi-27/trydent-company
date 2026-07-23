@@ -1,9 +1,13 @@
-# Cloudflare Pages リダイレクト設定
-# 参考: https://developers.cloudflare.com/pages/configuration/redirects/
-
-# www あり → なし（canonical は https://trident-company.jp/ に統一）
-https://www.trident-company.jp/* https://trident-company.jp/:splat 301
-
-# .pages.dev のプレビューURLが検索に載らないよう本番ドメインへ寄せる
-# （Cloudflare Pages の設定でカスタムドメインを設定後に有効：必要に応じてコメント解除）
-# https://trydent-company.pages.dev/* https://trident-company.jp/:splat 301
+# Cloudflare リダイレクト設定（相対URLのみ記述可）
+# 参考: https://developers.cloudflare.com/workers/static-assets/redirects/
+#
+# 注意：Workers (Static Assets) の _redirects は「相対URL」しか指定できない。
+#   `https://www.example.com/* https://example.com/:splat 301` のような
+#   ドメイン単位のリダイレクトはここには書けない（デプロイがエラーになる）。
+#
+# www あり → なし の301統一は、Cloudflare ダッシュボードの
+#   ルール → リダイレクトルール（Redirect Rules）で設定する。
+#   手順は docs/09_本番公開手順.md 手順3-4 を参照。
+#
+# 今後、サイト内でURLを変更した場合はここに追記する。
+#   例）/old-page/ /new-page/ 301
