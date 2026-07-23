@@ -1,0 +1,17 @@
+// =============================================================
+// TRIDENT COMPANY — Cloudflare Workers (Static Assets) 設定
+//   ビルド不要の静的サイトを配信する「アセットのみのWorker」。
+//   build.sh が作る dist/ を配信対象にする。
+//   Cloudflare ダッシュボードの Build command には `bash build.sh` を指定する。
+// =============================================================
+{
+  "name": "trident-company",
+  "compatibility_date": "2026-07-24",
+  "assets": {
+    "directory": "./dist",
+    // 存在しないURLは 404.html を返す（ステータスも404）
+    "not_found_handling": "404-page",
+    // /towing → /towing/ のように末尾スラッシュを自動で正規化（canonicalと一致）
+    "html_handling": "auto-trailing-slash"
+  }
+}
